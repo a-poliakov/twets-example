@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+  mvc:
+    throw-exception-if-no-handler-found: true
+mybatis:
+  type-handlers-package: com.example.twitterexample.typehandler
+  configuration:
+    map-underscore-to-camel-case: true
+  #  mapper-locations: classpath*:/mappers/*.xml
+  type-aliases-package: com.example.twitterexample.entity
+  scripting-language-driver:
+    thymeleaf:
+      template-file:
+        base-dir: mappers/
+        path-provider:
+          includes-package-path: false
+          separate-directory-per-mapper: false
